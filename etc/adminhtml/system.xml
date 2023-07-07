@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="iodigital" translate="label" sortOrder="420" class="iodigital-tab">
+            <label>iO</label>
+        </tab>
+
+        <section id="dev">
+            <group id="log" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="0"
+                   showInStore="0">
+                <label>Logging</label>
+                <field id="level" translate="label" type="select" sortOrder="20" showInDefault="1"
+                       showInWebsite="0" showInStore="0">
+                    <label>Level</label>
+                    <source_model>IODigital\Core\Model\Config\Source\LogLevel</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

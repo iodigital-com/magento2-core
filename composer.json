@@ -1,0 +1,63 @@
+{
+    "name": "iodigital-com/magento2-core",
+    "description": "iO core module for Magento 2",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "email": "sander.merks@iodigital.com",
+            "name": "Sander Merks"
+        },
+        {
+            "email": "sander.hartman@iodigital.com",
+            "name": "Sander Hartman"
+        },
+        {
+            "email": "mischa.braam@iodigital.com",
+            "name": "Mischa Braam"
+        }
+    ],
+    "require": {
+        "php": ">=7.1 <8.2",
+        "magento/framework": ">=102.0"
+    },
+    "require-dev": {
+        "iodigital-com/php-code-sniffer-standard": ">=29",
+        "magento/magento-coding-standard": "*",
+        "phpro/grumphp-shim": "^1.15"
+    },
+    "replace": {
+        "weprovide/magento2-core": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "IODigital\\Core\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "magento/composer-dependency-version-audit-plugin": true,
+            "phpro/grumphp-shim": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "coding-standard": [
+            "./vendor/bin/phpcs --standard=./phpcs.xml"
+        ],
+        "test": [
+            "@coding-standard"
+        ]
+    }
+
+}

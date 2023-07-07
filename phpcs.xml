@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ruleset name="iO Phpcs Standard">
+    <description>iO Phpcs Standard</description>
+
+    <file>.</file>
+    <exclude-pattern>vendor</exclude-pattern>
+    <arg name="extensions" value="php,phtml"/>
+    <arg name="cache"/>
+
+    <rule ref="Generic.Formatting.MultipleStatementAlignment"/>
+
+    <rule ref="Magento2">
+        <!-- Exclude these PHPDoc rules, since we do not need this for custom code. -->
+        <exclude name="Magento2.Annotation.MethodAnnotationStructure"/>
+        <exclude name="Magento2.Annotation.MethodArguments.NoCommentBlock"/>
+        <exclude name="Magento2.Annotation.MethodArguments.ParamMissing"/>
+        <exclude name="Magento2.Annotation.MethodArguments.ArgumentMissing"/>
+        <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing"/>
+    </rule>
+
+    <rule ref="iO">
+        <exclude name="SlevomatCodingStandard.Functions.FunctionLength.FunctionLength"/>
+    </rule>
+
+    <!-- Fully referenced used names is required for Magento API interfaces. -->
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedName">
+        <exclude-pattern>app/code/*/Api</exclude-pattern>
+    </rule>
+    <!-- Interfaces do need the 'Interface' suffix in Magento. -->
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming">
+        <exclude-pattern>app/code/*/Api</exclude-pattern>
+    </rule>
+</ruleset>

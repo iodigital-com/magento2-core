@@ -1,0 +1,26 @@
+.config-nav-block.iodigital-tab strong::before {
+    background: url(../images/logo.jpeg) no-repeat;
+    background-size: contain;
+    width: 19.5px;
+    height: 19.5px;
+    content: '';
+    display: inline-block;
+    margin-right: 12px;
+    vertical-align: bottom;
+}
+
+ul[role="menu"] [data-ui-id^="menu-iodigital"] strong::before {
+    background: url(../images/logo.jpeg) no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 30px;
+    content: '';
+    display: inline-block;
+    margin-right: 6px;
+}
+
+ul[role="menubar"] [data-ui-id^="menu-iodigital"] a::before {
+    background: url(../images/logo.jpeg) no-repeat center center;
+    background-size: contain;
+    content: ' ';
+}
