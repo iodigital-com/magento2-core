@@ -82,7 +82,7 @@ abstract class AbstractStoreLinkedResource extends AbstractDb
      * @return AbstractStoreLinkedResource
      * @throws LocalizedException
      */
-    public function load(AbstractModel $object, $value, ?string $field = null): self
+    public function load(AbstractModel $object, $value, $field = null): self
     {
         if ($field !== null && $field !== $this->getIdFieldName()) {
             parent::load($object, $value, $field);
