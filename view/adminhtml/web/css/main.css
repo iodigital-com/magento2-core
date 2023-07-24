@@ -10,10 +10,10 @@
 }
 
 ul[role="menu"] [data-ui-id^="menu-iodigital"] strong::before {
-    background: url(../images/logo.jpeg) no-repeat;
+    background: url(../images/logo.png) no-repeat;
     background-size: contain;
-    width: 30px;
-    height: 30px;
+    width: 19px;
+    height: 13px;
     content: '';
     display: inline-block;
     margin-right: 6px;
