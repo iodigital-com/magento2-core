@@ -2,7 +2,7 @@
     "name": "iodigital-com/magento2-core",
     "description": "iO core module for Magento 2",
     "type": "magento2-module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "authors": [
         {
@@ -28,7 +28,7 @@
         "phpro/grumphp-shim": "^1.15"
     },
     "replace": {
-        "weprovide/magento2-core": "*"
+        "iodigital/magento2-core": "*"
     },
     "autoload": {
         "psr-4": {
