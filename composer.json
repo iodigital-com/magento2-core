@@ -2,7 +2,7 @@
     "name": "iodigital-com/magento2-core",
     "description": "iO core module for Magento 2",
     "type": "magento2-module",
-    "version": "1.0.1",
+    "version": "1.1.0",
     "license": "MIT",
     "authors": [
         {
