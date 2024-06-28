@@ -16,6 +16,13 @@
         <exclude name="Magento2.Annotation.MethodArguments.ParamMissing"/>
         <exclude name="Magento2.Annotation.MethodArguments.ArgumentMissing"/>
         <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.Missing"/>
+        <exclude name="Magento2.Commenting.ClassPropertyPHPDocFormatting.MissingVar"/>
+
+        <!-- This rule does not work properly with the array<string, string> notation and will give false positives. -->
+        <exclude name="Magento2.Annotation.MethodArguments.DuplicateParam"/>
+
+        <!-- Exclude this rule because PSR12's version of this rule is already included and is compatible with multi-line conditionals -->
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace"/>
     </rule>
 
     <rule ref="iO">
@@ -24,10 +31,10 @@
 
     <!-- Fully referenced used names is required for Magento API interfaces. -->
     <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedName">
-        <exclude-pattern>app/code/*/Api</exclude-pattern>
+        <exclude-pattern>Api</exclude-pattern>
     </rule>
     <!-- Interfaces do need the 'Interface' suffix in Magento. -->
     <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming">
-        <exclude-pattern>app/code/*/Api</exclude-pattern>
+        <exclude-pattern>Api</exclude-pattern>
     </rule>
 </ruleset>

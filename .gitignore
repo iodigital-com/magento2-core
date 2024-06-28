@@ -1,4 +1,8 @@
-.DS_Store
-.idea
-composer.lock
-vendor
+*
+!/src
+!/src/**
+!.gitignore
+!composer.json
+!grumphp.yml
+!phpcs.xml
+!README.md

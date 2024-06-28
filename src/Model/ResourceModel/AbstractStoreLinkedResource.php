@@ -21,7 +21,7 @@ abstract class AbstractStoreLinkedResource extends AbstractDb
         Context $context,
         protected EntityManager $entityManager,
         protected MetadataPool $metadataPool,
-        $resourcePrefix = null
+        ?string $resourcePrefix = null
     ) {
         parent::__construct($context, $resourcePrefix);
     }
@@ -86,7 +86,9 @@ abstract class AbstractStoreLinkedResource extends AbstractDb
     {
         if ($field !== null && $field !== $this->getIdFieldName()) {
             parent::load($object, $value, $field);
-            $value = $object->getId() ?? $value;
+            if ($object->getId() !== null) {
+                $value = $object->getId();
+            }
         }
 
         $object = $this->entityManager->load($object, $value);

@@ -15,6 +15,7 @@ use Magento\Store\Model\Store;
 use Magento\Store\Model\StoreManagerInterface;
 use Psr\Log\LoggerInterface;
 
+use function array_key_exists;
 use function array_search;
 use function count;
 use function current;
@@ -62,7 +63,10 @@ abstract class AbstractStoreLinkedCollection extends AbstractCollection
 
             foreach ($this as $item) {
                 $linkedId = $item->getData($this->getIdFieldName());
-                $storeIds = $storesData[$linkedId] ?? [Store::DEFAULT_STORE_ID];
+                $storeIds = [Store::DEFAULT_STORE_ID];
+                if (array_key_exists($linkedId, $storesData) && $storesData[$linkedId] !== null) {
+                    $storeIds = $storesData[$linkedId];
+                }
 
                 $storeIdKey = array_search(Store::DEFAULT_STORE_ID, $storeIds, true);
                 if ($storeIdKey !== false) {
