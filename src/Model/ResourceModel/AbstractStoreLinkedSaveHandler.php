@@ -24,11 +24,12 @@ class AbstractStoreLinkedSaveHandler implements ExtensionInterface
     }
 
     /**
-     * @param $entity
-     * @param $arguments
+     * @@param object $entity
+     * @param array $arguments
      * @return bool|object
      * @throws LocalizedException
      */
+    // phpcs:ignore SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingAnyTypeHint
     public function execute($entity, $arguments = [])
     {
         $connection = $this->resourceModel->getConnection();
